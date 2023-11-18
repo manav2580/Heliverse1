@@ -1,0 +1,435 @@
+/* Default styles */
+.contain {
+  position: relative;
+  z-index: 0;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgb(9, 9, 9);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(32, 32, 32);
+  border-radius: 5px;
+  display: grid;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.content {
+  margin:auto ;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.animation {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubbles {
+  position: relative;
+  display: flex;
+}
+
+/* ... (bubbles styles) */
+
+/* Keyframes remain unchanged */
+
+.section-title {
+  font-size: 1.8rem;
+  color: #7A431D;
+  font-weight: 1000;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.shop {
+  margin-top: 2rem;
+}
+
+.shop-content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section {
+  padding: 4rem 0 3rem;
+}
+
+.product-img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  margin-bottom: 0.2rem;
+  padding: 10px;
+}
+
+.product-box {
+  background: #e0d9d9;
+  border-radius: 15px;
+  margin: 1vw 1vw 1vw 1vw;
+  height: 15rem;
+  width: 10rem;
+  padding: 1vw 1vw 1vw 1vw;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  text-decoration: none;
+}
+.product-title{
+  font-size: 15px;
+  text-decoration: underline;
+  color: #E62C03;
+  text-align: center;
+}
+
+/* ... (other product styles) */
+
+.Image-box {
+  background-color: #ffffff;
+  height: 7rem;
+  width:7rem;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.product-description {
+  font-size: 0.25vw;
+  color: red;
+}
+
+.btn {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  margin-top: 0.5rem;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+.btn:hover {
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+
+.product2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewanddel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.options {
+  color: red;
+}
+
+/* Responsive styles */
+/*
+@media only screen and (min-width: 768px) {
+  .contain {
+    width: 80%;
+  }
+
+  .product-box {
+    width: calc(50% - 2rem); 
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .contain {
+    width: 70%; 
+  }
+
+  .product-box {
+    width: calc(33.3333% - 2rem); 
+  }
+}*/
+
+/* Adjusted container styles for search on top */
+.container {
+  position:absolute;
+  width: 300px;
+  height: 100px;
+  top: 25px;
+  right: 125px;
+}
+
+.search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: crimson;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+  &:hover {
+    cursor: pointer;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.5s;
+  }
+}
+
+.searchBtn {
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  margin-top: 10px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  text-shadow: 0 0 10px crimson;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    width: 300px;
+    opacity: 1;
+    cursor: text;
+  }
+  &:focus ~ .search {
+    right: -250px;
+    background: #151515;
+    z-index: 6;
+    &::before {
+      top: 0;
+      left: 0;
+      width: 25px;
+    }
+    &::after {
+      top: 0;
+      left: 0;
+      width: 25px;
+      height: 2px;
+      border: none;
+      background: white;
+      border-radius: 0%;
+      transform: rotate(-45deg);
+    }
+  }
+  &::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: bolder;
+  }
+}
+/* ... (your existing styles) */
+
+.card {
+  color: inherit;
+  cursor: pointer;
+  width: calc(33% - 2rem);
+  min-width: calc(33% - 2rem);
+  height: 400px;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 1rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.front,
+.back {
+  display: flex;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+}
+
+.front {
+  /* ... (your existing styles for the front) */
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+}
+
+.front:before {
+  /* ... (your existing styles for the front:before) */
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  opacity: 0.25;
+  z-index: -1;
+}
+
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.back {
+  /* ... (your existing styles for the back) */
+  transform: rotateY(-180deg);
+  padding: 0 2em;
+}
+
+.back .button {
+  /* ... (your existing styles for the back .button) */
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+}
+
+.back .button:before {
+  /* ... (your existing styles for the back .button:before) */
+  box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+  background-color: rgba(26, 87, 230, 0.25);
+}
+
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.button {
+  /* ... (your existing styles for the button) */
+  transform: translateZ(40px);
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  font: inherit;
+  border: none;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 300ms ease;
+}
+
+.button:before {
+  /* ... (your existing styles for the button:before) */
+  transform: translateZ(-40px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.button:hover {
+  transform: translateZ(55px);
+}
+
+.button:hover:before {
+  transform: translateZ(-55px);
+}
+
+.button:active {
+  transform: translateZ(20px);
+}
+
+.button:active:before {
+  transform: translateZ(-20px);
+  top: 12px;
+}
+
+/* ... (your existing styles) */
