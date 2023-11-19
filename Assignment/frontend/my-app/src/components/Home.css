@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand&display=swap');
-html {
-    font-family: 'Quicksand', sans-serif;
-}
-
-body{
-    background:#DCDCDC;
-    margin-top:20px;
-}
 .card-box {
     padding: 20px;
     border-radius: 3px;

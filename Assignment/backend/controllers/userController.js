@@ -113,8 +113,20 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
-    const { page = 1, limit = 20, search } = req.query;
+    const { page = 1, limit = 20, search, domain, gender, available } = req.query;
     const query = {};
+
+    if (domain) {
+        query.domain = domain;
+    }
+
+    if (gender) {
+        query.gender = gender;
+    }
+
+    if (available !== undefined) {
+        query.available = available;
+    }
 
     // If there is a search parameter, use it to filter by first_name or last_name
     if (search) {
@@ -131,16 +143,19 @@ exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
             .limit(parseInt(limit))
             .exec();
 
+        const totalUsers = await User.countDocuments(query);
+
         res.status(200).json({
             success: true,
             users,
+            pages: Math.ceil(totalUsers / limit),
         });
     } catch (error) {
         return next(new errorHandler(error.message, 500));
     }
 });
 exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
-    const { page = 1, limit = 10, domain, gender, available } = req.query;
+    const { page = 1, limit = 20, domain, gender, available } = req.query;
     const query = {};
 
     // Apply filters based on the presence of domain, gender, or availability parameters
@@ -162,10 +177,13 @@ exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
             .skip((page - 1) * limit)
             .limit(parseInt(limit))
             .exec();
+        
+        const totalUsers = await User.countDocuments(query);
 
         res.status(200).json({
             success: true,
             users,
+            pages: Math.ceil(totalUsers/ limit),
         });
     } catch (error) {
         return next(new errorHandler(error.message, 500));
@@ -207,10 +225,10 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 // });
 exports.getAllUser = catchAsyncErrors(async (req, res, next) => {
     const users = await User.find();
-
+    console.log(users);
     res.status(200).json({
         success: true,
-        users
+        // users
     })
 })
 exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
